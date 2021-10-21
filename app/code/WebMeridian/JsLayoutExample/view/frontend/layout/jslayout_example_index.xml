@@ -31,8 +31,50 @@
                                         <item name="children" xsi:type="array">
                                             <item name="form-step" xsi:type="array">
                                                 <item name="component" xsi:type="string">WebMeridian_JsLayoutExample/js/view/form</item>
+                                                <item name="dataScope" xsi:type="string">data</item>
                                                 <item name="config" xsi:type="array">
+                                                    <item name="provider" xsi:type="string">checkoutProvider</item>
                                                     <item name="template" xsi:type="string">WebMeridian_JsLayoutExample/form</item>
+                                                </item>
+                                                <item name="children" xsi:type="array">
+                                                    <item name="input_test" xsi:type="array">
+                                                        <item name="sortOrder" xsi:type="string">10</item>
+                                                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                                        <item name="dataScope" xsi:type="string">input_test</item>
+                                                        <item name="config" xsi:type="array">
+                                                            <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                            <item name="deps" xsi:type="array">
+                                                                <item name="0" xsi:type="string">checkoutProvider</item>
+                                                            </item>
+                                                            <item name="template" xsi:type="string">ui/form/field</item>
+                                                            <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
+                                                            <item name="label" xsi:type="string" translate="true">Test Input</item>
+                                                        </item>
+                                                    </item>
+                                                    <item name="select_test" xsi:type="array">
+                                                        <item name="sortOrder" xsi:type="string">20</item>
+                                                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/select</item>
+                                                        <item name="dataScope" xsi:type="string">select_test</item>
+                                                        <item name="options" xsi:type="array">
+                                                            <item name="0" xsi:type="array">
+                                                                <item name="label" xsi:type="string">Select 1</item>
+                                                                <item name="value" xsi:type="string">select_1</item>
+                                                            </item>
+                                                            <item name="1" xsi:type="array">
+                                                                <item name="label" xsi:type="string">Select 2</item>
+                                                                <item name="value" xsi:type="string">select_2</item>
+                                                            </item>
+                                                        </item>
+                                                        <item name="config" xsi:type="array">
+                                                            <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                            <item name="deps" xsi:type="array">
+                                                                <item name="0" xsi:type="string">checkoutProvider</item>
+                                                            </item>
+                                                            <item name="template" xsi:type="string">ui/form/field</item>
+                                                            <item name="elementTmpl" xsi:type="string">ui/form/element/select</item>
+                                                            <item name="label" xsi:type="string" translate="true">Test Select</item>
+                                                        </item>
+                                                    </item>
                                                 </item>
                                             </item>
                                             <item name="customers-step" xsi:type="array">
@@ -44,6 +86,9 @@
                                         </item>
                                     </item>
                                 </item>
+                            </item>
+                            <item name="checkoutProvider" xsi:type="array">
+                                <item name="component" xsi:type="string">uiComponent</item>
                             </item>
                         </item>
                     </argument>

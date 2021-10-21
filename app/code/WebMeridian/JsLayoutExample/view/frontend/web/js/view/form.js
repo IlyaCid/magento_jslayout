@@ -46,5 +46,18 @@ define([
         navigateToNextStep: function () {
             stepNavigator.next();
         },
+
+        /**
+         * @returns void
+         */
+        submitButton: function () {
+            let formData = this.source.data;
+
+            if (formData.input_test) {
+                stepNavigator.next();
+            } else {
+                alert('Please, set input')
+            }
+        }
     });
 });

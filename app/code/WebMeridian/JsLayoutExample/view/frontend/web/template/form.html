@@ -1,14 +1,9 @@
 <div id="form" data-bind="fadeVisible: isVisible">
     <h3>Form</h3>
 
+    <each args="data: elems, as: 'element'">
+        <render if="hasTemplate()"/>
+    </each>
 
-    <form data-bind="submit: navigateToNextStep" novalidate="novalidate">
-        <div class="actions-toolbar">
-            <div class="primary">
-                <button data-role="opc-continue" type="submit" class="button action continue primary">
-                    <span><!-- ko i18n: 'Next'--><!-- /ko --></span>
-                </button>
-            </div>
-        </div>
-    </form>
+    <a href="#" data-bind="click: submitButton">Submit</a>
 </div>
