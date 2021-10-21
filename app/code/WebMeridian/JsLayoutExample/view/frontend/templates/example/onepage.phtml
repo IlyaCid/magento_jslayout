@@ -1,4 +1,14 @@
 <?php
 /** @var $block \WebMeridian\JsLayoutExample\Block\Example\OnePage */
 ?>
-<h1>Test OnePage Component</h1>
+<h3>OnePage Wrapper</h3>
+<div id="jslayout-example" data-bind="scope:'jslayoutexample'" class="checkout-container">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <script type="text/x-magento-init">
+        {
+            "#jslayout-example": {
+                "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
+            }
+        }
+    </script>
+</div>
