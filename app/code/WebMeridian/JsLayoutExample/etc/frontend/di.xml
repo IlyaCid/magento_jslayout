@@ -10,4 +10,13 @@
         </arguments>
     </type>
 
+    <type name="WebMeridian\JsLayoutExample\Block\Example\OnePage">
+        <arguments>
+            <argument name="layoutProcessors" xsi:type="array">
+                <item name="addToolTip" xsi:type="object">WebMeridian\JsLayoutExample\Block\LayoutProcessor\ToolTipProcessor</item>
+                <item name="changeSortOrder" xsi:type="object">WebMeridian\JsLayoutExample\Block\LayoutProcessor\SortOrderProcessor</item>
+            </argument>
+        </arguments>
+    </type>
+
 </config>
