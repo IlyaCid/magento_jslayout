@@ -12,6 +12,38 @@
                                 <item name="config" xsi:type="array">
                                     <item name="template" xsi:type="string">WebMeridian_JsLayoutExample/onepage</item>
                                 </item>
+                                <item name="children" xsi:type="array">
+                                    <item name="progressBar" xsi:type="array">
+                                        <item name="sortOrder"  xsi:type="string">0</item>
+                                        <item name="component" xsi:type="string">Magento_Checkout/js/view/progress-bar</item>
+                                        <item name="displayArea" xsi:type="string">progressBar</item>
+                                        <item name="config" xsi:type="array">
+                                            <item name="template" xsi:type="string">Magento_Checkout/progress-bar</item>
+                                            <item name="deps" xsi:type="array">
+                                                <item name="0" xsi:type="string">jslayoutexample.steps.form-step</item>
+                                                <item name="1" xsi:type="string">jslayoutexample.steps.customers-step</item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                    <item name="steps" xsi:type="array">
+                                        <item name="component" xsi:type="string">uiComponent</item>
+                                        <item name="displayArea" xsi:type="string">steps</item>
+                                        <item name="children" xsi:type="array">
+                                            <item name="form-step" xsi:type="array">
+                                                <item name="component" xsi:type="string">WebMeridian_JsLayoutExample/js/view/form</item>
+                                                <item name="config" xsi:type="array">
+                                                    <item name="template" xsi:type="string">WebMeridian_JsLayoutExample/form</item>
+                                                </item>
+                                            </item>
+                                            <item name="customers-step" xsi:type="array">
+                                                <item name="component" xsi:type="string">WebMeridian_JsLayoutExample/js/view/customers</item>
+                                                <item name="config" xsi:type="array">
+                                                    <item name="template" xsi:type="string">WebMeridian_JsLayoutExample/customers</item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
                             </item>
                         </item>
                     </argument>

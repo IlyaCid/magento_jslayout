@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <type name="WebMeridian\JsLayoutExample\Model\CompositeConfigProvider" >
+        <arguments>
+            <argument name="configProviders" xsi:type="array">
+                <item name="jslayout_example_config_provider" xsi:type="object">WebMeridian\JsLayoutExample\Model\ConfigProvider</item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>
