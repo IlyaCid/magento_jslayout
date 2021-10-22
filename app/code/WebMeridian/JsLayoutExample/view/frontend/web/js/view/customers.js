@@ -82,5 +82,9 @@ define([
             })
         },
 
+        chooseCustomer: function (id) {
+            alert(id)
+        }
+
     });
 });

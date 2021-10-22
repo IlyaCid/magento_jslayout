@@ -13,6 +13,7 @@
                 <span text="customer.firstName"></span>
                 <span text="customer.lastName"></span>
                 <span text="customer.email"></span>
+                <span data-bind="click: function() {$parent.chooseCustomer(customer.id)}">Choose</span>
             </div>
         </each>
     </if>
