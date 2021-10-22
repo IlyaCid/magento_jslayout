@@ -1,5 +1,9 @@
 <div id="customers" data-bind="fadeVisible: isVisible">
     <h3>Customers</h3>
+    <div>
+        <span translate="'Search'"></span>
+        <input data-bind="value: request" />
+    </div>
 
     <if args="customers().length">
         <div>

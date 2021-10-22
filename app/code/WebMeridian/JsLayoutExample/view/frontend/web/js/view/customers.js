@@ -20,6 +20,9 @@ define([
     return Component.extend({
         defaults: {
             customers: [],
+            listens: {
+                request: 'searchRequest'
+            }
         },
 
         isVisible: ko.observable(true),
@@ -48,7 +51,8 @@ define([
         initObservable: function () {
             this._super().observe([
                 'customers',
-                'responseData'
+                'responseData',
+                'request'
             ]);
 
             return this;
@@ -90,6 +94,10 @@ define([
 
         updateList: function (customerList) {
             this.customers(customerList)
+        },
+
+        searchRequest: function (request) {
+            this.getCustomerList({request_name: request})
         },
 
     });
