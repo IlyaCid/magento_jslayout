@@ -5,6 +5,7 @@ define([
     'ko',
     'Magento_Checkout/js/model/step-navigator',
     'mage/translate',
+    'mage/url',
 ], function (
     $,
     _,
@@ -12,10 +13,14 @@ define([
     ko,
     stepNavigator,
     $t,
+    url
 ) {
     'use strict';
 
     return Component.extend({
+        defaults: {
+            customers: [],
+        },
 
         isVisible: ko.observable(true),
         /** @inheritdoc */
@@ -29,6 +34,20 @@ define([
                 _.bind(this.navigate, this),
                 20
             );
+
+            this.getCustomerList();
+
+            return this;
+        },
+
+        /**
+         * Initial observerable
+         * @returns {*}
+         */
+        initObservable: function () {
+            this._super().observe([
+                'customers'
+            ]);
 
             return this;
         },
@@ -46,5 +65,22 @@ define([
         navigateToNextStep: function () {
             stepNavigator.next();
         },
+
+        getCustomerList: function (data) {
+            var data = data || {};
+            $.ajax({
+                url: url.build('jslayout/customerlist'),
+                data: data,
+                type: 'post',
+                context: this,
+                dataType: 'json',
+
+                /** @inheritdoc */
+                success: function (response) {
+                    this.customers(response.customers)
+                },
+            })
+        },
+
     });
 });

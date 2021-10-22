@@ -1,3 +1,23 @@
 <div id="customers" data-bind="fadeVisible: isVisible">
     <h3>Customers</h3>
+
+    <if args="customers().length">
+        <div>
+            <span>ID</span>
+            <span>First Name</span>
+            <span>Email</span>
+        </div>
+        <each args ="data: customers, as: 'customer'">
+            <div>
+                <span text="customer.id"></span>
+                <span text="customer.firstName"></span>
+                <span text="customer.lastName"></span>
+                <span text="customer.email"></span>
+            </div>
+        </each>
+    </if>
+    <ifnot args="customers().length">
+        <div translate="'No customers to display'"></div>
+    </ifnot>
+
 </div>
