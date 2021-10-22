@@ -36,6 +36,7 @@ define([
             );
 
             this.getCustomerList();
+            this.responseData.subscribe(this.updateList.bind(this))
 
             return this;
         },
@@ -46,7 +47,8 @@ define([
          */
         initObservable: function () {
             this._super().observe([
-                'customers'
+                'customers',
+                'responseData'
             ]);
 
             return this;
@@ -77,14 +79,18 @@ define([
 
                 /** @inheritdoc */
                 success: function (response) {
-                    this.customers(response.customers)
+                    this.responseData(response.customers)
                 },
             })
         },
 
         chooseCustomer: function (id) {
             alert(id)
-        }
+        },
+
+        updateList: function (customerList) {
+            this.customers(customerList)
+        },
 
     });
 });
